@@ -32,7 +32,7 @@ A lightweight Windows posture agent built with:
 - SQLite local storage  
 
 > A full systems-level project showcasing C++, secure messaging, and distributed agent design.  
-📌 Repo: **[Sentinel](https://github.com/rohan2107/SentinelAgent)**
+📌 Repo: **[Sentinel](https://github.com/rohan2107/Sentinel)**
 
 ---
 
@@ -44,7 +44,7 @@ End-to-end ML pipeline using:
 - Production-ready `/predict` endpoint  
 
 > Demonstrates ML engineering, API design, and containerized deployment.  
-📌 Repo: **[fraud-detection-api](https://github.com/rohan2107/fraud-detection-api)**
+📌 Repo: **[fraud-detection-api](https://github.com/rohan2107/fraud-detection)**
 
 ---
 
