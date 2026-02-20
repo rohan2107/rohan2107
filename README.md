@@ -1,71 +1,106 @@
 # Hi, I'm Rohan Anthony
 
-**Software Engineer (ex-IBM) • MSc Data Science @ University of Bristol**  
-**Backend • Systems • Full-Stack • Applied ML**
+**Backend & Distributed Systems Engineer (ex-IBM)**  
+MSc Data Science — University of Bristol
 
-I’m a software engineer with experience building **distributed systems, secure C++ agents, backend services**, and **cloud-deployed machine learning pipelines**.
+I design and build distributed backend systems with a focus on reliability, delivery guarantees, and correctness.
 
-I enjoy working across the stack — from **low-level systems and networking** to **Python APIs, DevOps**, and **applied ML** — with a strong focus on correctness, clarity, and maintainability.
+At IBM, I worked on event-driven security infrastructure designed for operation across 10k+ endpoints, implementing versioned policy evaluation, content-addressable deduplication, and at-least-once delivery semantics.
+
+My technical interests include:
+
+- Agent architectures  
+- Event-driven systems  
+- Secure communication (TLS / mTLS)  
+- Persistence and delivery guarantees  
+- Applied ML where it strengthens system capability  
 
 ---
 
 ## 🚀 Featured Projects
 
-### 🏋️ **Gym-Bro — Full-Stack Fitness App**
-A personal fitness tracking application focused on simplicity and consistency.
+### 🛡️ Sentinel — Windows Security Agent (C++)
 
-- FastAPI backend with REST APIs  
-- React-based frontend (PWA)  
-- Workout and meal logging  
-- Offline support via service workers  
-- Experimental ML-based food / nutrition estimation (in progress)
+A production-style Windows posture agent modeling real-world distributed endpoint architecture.
 
-📌 **Repo:** https://github.com/rohan2107/gym-bro
-
----
-
-### 🛡️ **Sentinel — Windows Security Agent (C++)**
-A Windows posture and compliance agent.
+**Core capabilities**
 
 - osquery-based posture checks  
-- SQL + Lua evaluation engine  
-- Policy versioning and local persistence  
+- SQL + Lua rule evaluation engine  
+- Versioned policy updates with local persistence  
 - Secure MQTT communication (TLS / mTLS)  
-- SHA-256 deduplication  
-- SQLite-backed storage  
+- SHA-256 content-addressable deduplication  
+- SQLite-backed offline storage  
 
-📌 **Repo:** https://github.com/rohan2107/Sentinel
+**Design focus**
+
+- Idempotent policy updates  
+- Offline-first queueing with replay on reconnect  
+- Change-based reporting instead of polling  
+- Clear separation between communication, evaluation, and persistence layers  
+
+Repo: https://github.com/rohan2107/Sentinel
 
 ---
 
-### 🤖 **Fraud Detection API — ML Service**
-An end-to-end machine learning service exposed via a REST API.
+### 🏋️ Gym-Bro — Offline-First Fitness Platform
 
-- Isolation Forest–based anomaly detection  
-- Feature preprocessing and evaluation  
+A production-ready full-stack fitness tracking application built for daily use.
+
+**Architecture**
+
+- FastAPI backend (REST APIs, SQLModel, PostgreSQL)  
+- React + TypeScript frontend (mobile-first PWA)  
+- Google OAuth 2.0 authentication with JWT  
+- Offline-first sync via service workers  
+- CI pipeline with backend and frontend test coverage  
+
+**Advanced features in development**
+
+- AI-assisted meal photo logging  
+- Multi-week energy balance analytics  
+- Adaptive TDEE estimation based on cumulative trends  
+
+**Engineering emphasis**
+
+- Multi-tenant data isolation  
+- Rate limiting for external API usage  
+- Database migrations with Alembic  
+- Test-driven backend development  
+
+Repo: https://github.com/rohan2107/gym-bro
+
+---
+
+### 🤖 Fraud Detection API — Anomaly Detection Service
+
+A REST-exposed anomaly detection service focused on clean model serving.
+
+- Isolation Forest–based fraud detection  
+- Feature preprocessing and evaluation pipeline  
 - FastAPI `/predict` endpoint  
 - Dockerised deployment  
 
-📌 **Repo:** https://github.com/rohan2107/fraud-detection
+Repo: https://github.com/rohan2107/fraud-detection
 
 ---
 
-## 🔧 Tech Stack & Skills
+## 🔧 Technical Stack
 
 **Languages**  
-C++, Python, Java, Go, SQL  
+C++, Java, Go, Python, SQL  
 
-**Backend & Systems**  
-FastAPI, REST, OpenAPI, MQTT, Kafka, TLS/mTLS, SQLModel  
+**Distributed Systems & Protocols**  
+Kafka, MQTT, TLS / mTLS, REST APIs, event-driven architecture, at-least-once delivery semantics  
 
-**AI / ML**  
-scikit-learn, Pandas, NumPy, Random Forests, Elastic Net, cross-validation  
+**Cloud & Infrastructure**  
+AWS (EC2, ASG, S3, SQS), Docker, Kubernetes, CI/CD (GitHub Actions, Jenkins)  
 
-**Cloud & DevOps**  
-Docker, Kubernetes, AWS (EC2, ASG, SQS, S3), GitHub Actions, Jenkins  
+**Data & Storage**  
+PostgreSQL, SQLite, content-addressable hashing (SHA-256)  
 
-**Databases**  
-PostgreSQL, SQLite  
+**ML & Analytics**  
+scikit-learn, Pandas, NumPy, Elastic Net, Random Forests, cross-validation  
 
 **Other Tools**  
 osquery, Lua, Git, R (tidyverse, caret)
@@ -74,23 +109,29 @@ osquery, Lua, Git, R (tidyverse, caret)
 
 ## 💼 Experience
 
-### **Software Engineer — IBM (2023–2025)**
-- Built secure C++ communication modules for a Windows agent, improving throughput by ~30%  
-- Designed a SQL + Lua posture evaluation engine used across 10k+ devices  
-- Developed Java and Go microservices, including a Kubernetes Operator  
-- Automated CI/CD pipelines (Jenkins, GitHub Actions), reducing deployment time by ~40%
+### Software Engineer — IBM Security (2023–2025)
 
-### **Software Engineering Intern — IBM Cloud (2023)**
-- Worked on Java / Node.js microservices for billing and orchestration  
-- Implemented scheduled jobs and authored Swagger / OpenAPI documentation
+- Architected event-driven posture system designed for 10k+ endpoints  
+- Implemented SHA-256 deduplication to reduce network traffic  
+- Built versioned SQL + Lua policy engine with idempotent updates  
+- Implemented offline queueing with retry semantics  
+- Developed Kafka-based ingestion pipelines  
+- Built Kubernetes Operator for service lifecycle automation  
+
+### Software Engineering Intern — IBM Cloud (2023)
+
+- Developed Java and Node.js microservices for billing and orchestration  
+- Authored OpenAPI documentation and implemented scheduled jobs  
 
 ---
 
 ## 🎓 Education
 
 **MSc Data Science — University of Bristol (2025–2026)**  
+Large Scale Data Engineering, Statistical Computing, AI and Text Analytics  
+
 - Built ML pipelines in R (Elastic Net + tuned Random Forest, F1 = 0.787)  
-- Deployed an AWS micro-application using an SQS-driven Auto Scaling Group  
+- Deployed AWS micro-application with SQS-driven Auto Scaling  
 
 **B.Tech, Electronics & Communication Engineering — MIT Manipal (2023)**
 
@@ -98,6 +139,6 @@ osquery, Lua, Git, R (tidyverse, caret)
 
 ## 📫 Connect
 
-- **LinkedIn:** https://linkedin.com/in/rohan-anthony-9b03bb210  
-- **GitHub:** https://github.com/rohan2107  
-- **Email:** rohan.anthony2107@gmail.com
+LinkedIn: https://linkedin.com/in/rohan-anthony-9b03bb210  
+GitHub: https://github.com/rohan2107  
+Email: rohan.anthony2107@gmail.com
