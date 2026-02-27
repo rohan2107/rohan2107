@@ -27,17 +27,21 @@ A production-style Windows posture agent modeling real-world distributed endpoin
 
 - osquery-based posture checks  
 - SQL + Lua rule evaluation engine  
-- Versioned policy updates with local persistence  
-- Secure MQTT communication (TLS / mTLS)  
+- Policy evaluation with local persistence  
 - SHA-256 content-addressable deduplication  
-- SQLite-backed offline storage  
+- Durable retry queue with exponential backoff and crash recovery  
+- HTTP delivery with idempotent backend (hash verification, 409 on duplicates)  
+- SQLite-backed offline-first storage  
 
 **Design focus**
 
-- Idempotent policy updates  
-- Offline-first queueing with replay on reconnect  
-- Change-based reporting instead of polling  
-- Clear separation between communication, evaluation, and persistence layers  
+- Persist-before-send: delivery intent survives agent crashes  
+- Exponential backoff with jitter (1s → 300s cap)  
+- Interface-based delivery abstraction (HTTP shipped, MQTT planned)  
+- Content-addressable deduplication across agent and backend  
+- Clear separation between collection, evaluation, persistence, and delivery  
+
+**Next:** Go aggregation service (Prometheus, Docker Compose) → MQTT delivery client → load simulation
 
 Repo: https://github.com/rohan2107/Sentinel
 
@@ -55,11 +59,7 @@ A production-ready full-stack fitness tracking application built for daily use.
 - Offline-first sync via service workers  
 - CI pipeline with backend and frontend test coverage  
 
-**Advanced features in development**
-
-- AI-assisted meal photo logging  
-- Multi-week energy balance analytics  
-- Adaptive TDEE estimation based on cumulative trends  
+**Next:** AI meal photo logging (Google Vision + USDA nutrition API) — backend complete, frontend in progress
 
 **Engineering emphasis**
 
@@ -91,7 +91,7 @@ Repo: https://github.com/rohan2107/fraud-detection
 C++, Java, Go, Python, SQL  
 
 **Distributed Systems & Protocols**  
-Kafka, MQTT, TLS / mTLS, REST APIs, event-driven architecture, at-least-once delivery semantics  
+Kafka, MQTT, TLS / mTLS, REST APIs, event-driven architecture, at-least-once delivery semantics, exponential backoff
 
 **Cloud & Infrastructure**  
 AWS (EC2, ASG, S3, SQS), Docker, Kubernetes, CI/CD (GitHub Actions, Jenkins)  
