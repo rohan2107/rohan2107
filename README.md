@@ -90,12 +90,15 @@ Repo: https://github.com/rohan2107/fraud-detection
 ## Education
 
 **MSc Data Science, University of Bristol (2025 to 2026)**
-Large Scale Data Engineering, Statistical Computing, AI and Text Analytics. Built ML pipelines in R (Elastic Net and tuned Random Forest, F1 = 0.787) and deployed an AWS micro-application with SQS-driven Auto Scaling.
 
-**B.Tech, Electronics and Communication Engineering, MIT Manipal (2023)**
+Relevant coursework: Large Scale Data Engineering, Statistical Computing, Introduction to AI and Text Analytics, Data Science Methods and Practices. Built ML pipelines in R (Elastic Net and tuned Random Forest, F1 = 0.787) and deployed an AWS micro-application with SQS-driven Auto Scaling.
+
+**B.Tech, Electronics and Communication Engineering, MIT Manipal (2023), 8.1/10**
+
+Relevant coursework: Data Structures and Algorithms, Object-Oriented Programming (C++), Computer Organization and Architecture, Linux Programming.
 
 ## Contact
 
-LinkedIn: https://linkedin.com/in/rohan-anthony-9b03bb210
-GitHub: https://github.com/rohan2107
-Email: rohan.anthony2107@gmail.com
+- LinkedIn: https://linkedin.com/in/rohan-anthony-9b03bb210
+- GitHub: https://github.com/rohan2107
+- Email: rohan.anthony2107@gmail.com
