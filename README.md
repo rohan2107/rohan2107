@@ -1,144 +1,101 @@
-# Hi, I'm Rohan Anthony
+# Rohan Anthony
 
-**Backend & Distributed Systems Engineer (ex-IBM)**  
-MSc Data Science — University of Bristol
+Backend and distributed-systems engineer (ex-IBM Security). MSc Data Science, University of Bristol.
 
-I design and build distributed backend systems with a focus on reliability, delivery guarantees, and correctness.
+I build backend and distributed systems with a focus on reliability, delivery guarantees, and correctness, shaped by a security-engineering background at IBM. I work agentically with AI coding harnesses (Claude Code) day to day, and my MSc research is in causal machine learning and reinforcement learning.
 
-At IBM, I worked on event-driven security infrastructure designed for operation across 10k+ endpoints, implementing versioned policy evaluation, content-addressable deduplication, and at-least-once delivery semantics.
+**Interests:** distributed systems and delivery guarantees, event-driven architectures, security engineering (detection, TLS/mTLS), agentic AI and LLM-integrated systems, causal ML and reinforcement learning.
 
-My technical interests include:
+## Featured work
 
-- Agent architectures  
-- Event-driven systems  
-- Secure communication (TLS / mTLS)  
-- Persistence and delivery guarantees  
-- Applied ML where it strengthens system capability  
+### Causal state recovery for reinforcement learning (MSc thesis)
 
----
+"Recovering Causal State Variables for Reinforcement Learning via Probabilities of Necessity and Sufficiency." Solo research project across causal inference, reinforcement learning, and representation learning.
 
-## 🚀 Featured Projects
+- **A benchmark where the correct answer is known.** A factored-MDP gridworld with four planted causal variables, an injected noise control, and an engineered spurious variable whose association with a genuine cause is tunable in both strength and sign, so any recovery method can be scored against ground truth.
+- **An interventional oracle ("replay-PN") estimating Pearl's probability of necessity.** A state-overwrite do-operator edits the simulator mid-episode, then the recorded action sequence is replayed unchanged, isolating the world's causal response from a policy's reaction to a perturbed observation. Recovery is exact and stable across five policy seeds, two RL algorithms (PPO and TRPO), and five map layouts.
+- **Located the boundary of observational recovery.** Correlation, mutual information, conditional independence, a sparse L1 gate, and an adapted CaSN objective all recover the planted set exactly through the intermediate regime, and all collapse at both deterministic endpoints, where the spurious variable becomes an exact copy or an exact inversion of the cause it shadows. At the copy endpoint the two are literally the same column of data, so no estimator restricted to that distribution can prefer one over the other. Direct intervention separates them throughout.
+- **Success rate hides spurious reliance.** Under a matched evaluation differing in exactly one input channel, three of five full-observation policies depend on the spurious variable, including one that holds a 1.000 success rate while changing route on 6 of 100 episodes.
+- **Reproducible by construction.** 22 experiment scripts and 14 test modules over a 14-module package, every run seeded end to end, with headline results regression-gated against recorded baselines.
 
-### 🛡️ Sentinel — Windows Security Agent (C++)
+Stack: Python, PyTorch, Stable-Baselines3, sb3-contrib, Gymnasium, MiniGrid, scikit-learn, pytest, ruff.
 
-A production-style Windows posture agent modeling real-world distributed endpoint architecture.
+Repo: https://github.com/rohan2107/causal-state-recovery
 
-**Core capabilities**
+### Sentinel (C++): endpoint security agent
 
-- osquery-based posture checks  
-- SQL + Lua rule evaluation engine  
-- Policy evaluation with local persistence  
-- SHA-256 content-addressable deduplication  
-- Durable retry queue with exponential backoff and crash recovery  
-- HTTP delivery with idempotent backend (hash verification, 409 on duplicates)  
-- SQLite-backed offline-first storage  
+A from-scratch endpoint security agent modelling production-grade distributed endpoint architecture and reliability patterns.
 
-**Design focus**
+- osquery-based posture checks with a SQLite-backed, offline-first store.
+- Sandboxed Lua rule-evaluation engine with local persistence.
+- SHA-256 content-addressable deduplication across agent and backend.
+- Durable retry queue with exponential backoff and jitter, and crash recovery.
+- Persist-before-send delivery: delivery intent survives agent crashes.
+- Interface-based delivery abstraction (HTTP shipped, MQTT planned), with an idempotent backend (hash verification, 409 on duplicates).
 
-- Persist-before-send: delivery intent survives agent crashes  
-- Exponential backoff with jitter (1s → 300s cap)  
-- Interface-based delivery abstraction (HTTP shipped, MQTT planned)  
-- Content-addressable deduplication across agent and backend  
-- Clear separation between collection, evaluation, persistence, and delivery  
-
-**Next:** Go aggregation service (Prometheus, Docker Compose) → MQTT delivery client → load simulation
+Next: Go aggregation service (Prometheus, Docker Compose), MQTT delivery client, load simulation.
 
 Repo: https://github.com/rohan2107/Sentinel
 
----
+### Gym-Bro: full-stack fitness platform
 
-### 🏋️ Gym-Bro — Offline-First Fitness Platform
+A full-stack fitness tracking application built end to end for daily use.
 
-A production-ready full-stack fitness tracking application built for daily use.
-
-**Architecture**
-
-- FastAPI backend (REST APIs, SQLModel, PostgreSQL)  
-- React + TypeScript frontend (mobile-first PWA)  
-- Google OAuth 2.0 authentication with JWT  
-- Offline-first sync via service workers  
-- CI pipeline with backend and frontend test coverage  
-
-**Next:** AI meal photo logging (Google Vision + USDA nutrition API) — backend complete, frontend in progress
-
-**Engineering emphasis**
-
-- Multi-tenant data isolation  
-- Rate limiting for external API usage  
-- Database migrations with Alembic  
-- Test-driven backend development  
+- FastAPI backend (REST APIs, SQLModel, PostgreSQL) with Alembic migrations.
+- React and TypeScript mobile-first PWA with offline-first sync via service workers.
+- Google OAuth 2.0 with JWT, per-user data isolation, and rate limiting on external APIs.
+- AI meal logging (Google Vision plus USDA nutrition API).
+- Test-driven backend, 160 automated tests, 84% backend coverage, CI with preview deploys.
 
 Repo: https://github.com/rohan2107/gym-bro
 
----
+### Fraud detection API
 
-### 🤖 Fraud Detection API — Anomaly Detection Service
+A REST-exposed anomaly-detection service focused on clean model serving.
 
-A REST-exposed anomaly detection service focused on clean model serving.
-
-- Isolation Forest–based fraud detection  
-- Feature preprocessing and evaluation pipeline  
-- FastAPI `/predict` endpoint  
-- Dockerised deployment  
+- Isolation Forest fraud detection with a feature preprocessing and evaluation pipeline.
+- FastAPI /predict endpoint, containerised with Docker.
 
 Repo: https://github.com/rohan2107/fraud-detection
 
----
+## Experience
 
-## 🔧 Technical Stack
+### Software Engineer, IBM Security (2023 to 2025)
 
-**Languages**  
-C++, Java, Go, Python, SQL  
+- Designed the data model and POC for an event-driven endpoint posture system targeting 10k+ endpoints.
+- Redesigned reporting to be state-change-triggered with SHA-256 content-addressable deduplication and heartbeat liveness, cutting network traffic 95 to 98%.
+- Implemented guaranteed at-least-once delivery in the C++ agent (ACK persistence, offline replay via thread-safe SQLite).
+- Built a versioned Lua policy engine with idempotent updates and hot-reload.
+- Contributed to Kafka Streams detection pipelines correlating high-volume event streams.
+- Built a Kubernetes Operator in Go for service lifecycle automation, and owned CI/CD across two production services.
 
-**Distributed Systems & Protocols**  
-Kafka, MQTT, TLS / mTLS, REST APIs, event-driven architecture, at-least-once delivery semantics, exponential backoff
+### Software Engineering Intern, IBM Cloud (2023)
 
-**Cloud & Infrastructure**  
-AWS (EC2, ASG, S3, SQS), Docker, Kubernetes, CI/CD (GitHub Actions, Jenkins)  
+- Built Java and Node.js microservices for billing and orchestration, with distributed deduplication (IBM Cloudant), OpenAPI documentation, and scheduled jobs.
 
-**Data & Storage**  
-PostgreSQL, SQLite, content-addressable hashing (SHA-256)  
+## Technical stack
 
-**ML & Analytics**  
-scikit-learn, Pandas, NumPy, Elastic Net, Random Forests, cross-validation  
+**Languages:** Go, Java, C++, Python, SQL, Bash
 
-**Other Tools**  
-osquery, Lua, Git, R (tidyverse, caret)
+**Distributed systems and protocols:** event-driven architecture, Kafka, MQTT, REST APIs, at-least-once delivery, deduplication, retries and backoff, TLS/mTLS
 
----
+**Cloud and infrastructure:** AWS (EC2, ASG, S3, SQS), Docker, Kubernetes (custom Operator in Go), CI/CD (GitHub Actions, GitLab CI, Jenkins)
 
-## 💼 Experience
+**Data and storage:** PostgreSQL, SQLite, Redis, content-addressable hashing (SHA-256)
 
-### Software Engineer — IBM Security (2023–2025)
+**Machine learning and research:** PyTorch, Stable-Baselines3, causal inference, reinforcement learning, scikit-learn, experimentation and evaluation
 
-- Architected event-driven posture system designed for 10k+ endpoints  
-- Implemented SHA-256 deduplication to reduce network traffic  
-- Built versioned SQL + Lua policy engine with idempotent updates  
-- Implemented offline queueing with retry semantics  
-- Developed Kafka-based ingestion pipelines  
-- Built Kubernetes Operator for service lifecycle automation  
+**AI-assisted engineering:** agentic coding harnesses (Claude Code), AI-assisted development workflows
 
-### Software Engineering Intern — IBM Cloud (2023)
+## Education
 
-- Developed Java and Node.js microservices for billing and orchestration  
-- Authored OpenAPI documentation and implemented scheduled jobs  
+**MSc Data Science, University of Bristol (2025 to 2026)**
+Large Scale Data Engineering, Statistical Computing, AI and Text Analytics. Built ML pipelines in R (Elastic Net and tuned Random Forest, F1 = 0.787) and deployed an AWS micro-application with SQS-driven Auto Scaling.
 
----
+**B.Tech, Electronics and Communication Engineering, MIT Manipal (2023)**
 
-## 🎓 Education
+## Contact
 
-**MSc Data Science — University of Bristol (2025–2026)**  
-Large Scale Data Engineering, Statistical Computing, AI and Text Analytics  
-
-- Built ML pipelines in R (Elastic Net + tuned Random Forest, F1 = 0.787)  
-- Deployed AWS micro-application with SQS-driven Auto Scaling  
-
-**B.Tech, Electronics & Communication Engineering — MIT Manipal (2023)**
-
----
-
-## 📫 Connect
-
-LinkedIn: https://linkedin.com/in/rohan-anthony-9b03bb210  
-GitHub: https://github.com/rohan2107  
+LinkedIn: https://linkedin.com/in/rohan-anthony-9b03bb210
+GitHub: https://github.com/rohan2107
 Email: rohan.anthony2107@gmail.com
