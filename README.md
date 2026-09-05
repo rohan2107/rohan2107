@@ -2,7 +2,7 @@
 
 Backend and distributed-systems engineer (ex-IBM Security). MSc Data Science, University of Bristol.
 
-I build backend and distributed systems with a focus on reliability, delivery guarantees, and correctness, shaped by a security-engineering background at IBM. I work agentically with AI coding harnesses (Claude Code) day to day, and my MSc research is in causal machine learning and reinforcement learning.
+I build scalable backend and distributed systems with a focus on reliability, performance, and correctness, shaped by a security-engineering background at IBM. MSc Data Science thesis on Causal State Recovery in Reinforcement Learning.
 
 **Interests:** distributed systems and delivery guarantees, event-driven architectures, security engineering (detection, TLS/mTLS), agentic AI and LLM-integrated systems, causal ML and reinforcement learning.
 
